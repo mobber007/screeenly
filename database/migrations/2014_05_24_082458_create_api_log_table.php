@@ -16,7 +16,7 @@ class CreateApiLogTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable()->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('api_key_id')->nullable();
+            $table->integer('api_key_id')->unsigned()->nullable();
             $table->foreign('api_key_id')->references('id')->on('api_keys');
             $table->text('images');
             $table->timestamps();
