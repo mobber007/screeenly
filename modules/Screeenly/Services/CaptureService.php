@@ -81,7 +81,7 @@ class CaptureService
 
         $filename = uniqid().'_'.str_random(30);
 
-        $storageUrl = 'storage/app/public/'.$filename.'.jpg';
+        $storageUrl = storage_path("app/public/{$filename}.jpg");
 
         return $this->browser->capture(
             $this->url,

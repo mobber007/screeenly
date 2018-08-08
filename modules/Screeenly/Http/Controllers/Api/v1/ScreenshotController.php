@@ -49,11 +49,11 @@ class ScreenshotController extends Controller
                 'base64_raw' => $screenshot->getBase64(),
             ]);
         } catch (Exception $e) {
-            Bugsnag::notifyException($e);
+           /* Bugsnag::notifyException($e);*/
 
             return response()->json([
                 'title' => 'An error accoured',
-                'message' => 'An internal error accoured.',
+                'message' => 'An internal error ocured.',
                 'error' => [
                     'status' => 500,
                     'detail' => $e->getMessage(),
