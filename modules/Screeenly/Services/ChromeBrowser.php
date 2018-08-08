@@ -12,6 +12,8 @@ class ChromeBrowser extends Browser implements CanCaptureScreenshot
     public function capture(Url $url, $storageUrl)
     {
         $browser = Browsershot::url($url->getUrl())
+            ->setNodeBinary('/usr/bin/node')
+            ->setNpmBinary('/usr/bin/npm')
             ->ignoreHttpsErrors()
             ->windowSize($this->width, is_null($this->height) ? 768 : $this->height)
             ->timeout(30)
